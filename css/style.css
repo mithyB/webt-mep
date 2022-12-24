@@ -1,0 +1,12 @@
+header nav ul {
+  margin: 0;
+}
+
+main .image-title {
+  font-size: 44px;
+}
+
+.canvas canvas {
+  border: 4px solid teal;
+  cursor: grab;
+}

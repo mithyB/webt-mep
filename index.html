@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8" />
+    <title>Einrichtungs-Tool</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <script src="js/script.js"></script>
+  </head>
+  <body>
+    <header class="w3-top">
+      <nav class="w3-bar w3-teal w3-padding">
+        <a class="w3-bar-item w3-button">Einrichtungs-Tool</a>
+
+        <ul class="w3-right">
+          <li class="w3-bar-item w3-button">
+            <a href="#home">Home</a>
+          </li>
+          <li class="w3-bar-item w3-button">
+            <a href="#tool">Tool</a>
+          </li>
+          <li class="w3-bar-item w3-button">
+            <a href="#about">Über uns</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <div class="w3-display-container w3-content w3-wide">
+        <img src="img/header.jpg" alt="Headerbild" class="w3-image" />
+
+        <div class="w3-display-middle">
+          <div class="image-title">Einrichtungs-Tool</div>
+          <div>Gestalte deine Wohnung</div>
+        </div>
+      </div>
+
+      <section id="home">
+        <h1>Home</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic optio
+          odit, quidem officia consequatur ea asperiores aliquam. Quas ex cum
+          vitae eveniet provident suscipit, minima fugiat quaerat, distinctio
+          ratione voluptatum.
+        </p>
+      </section>
+
+      <section id="tool">
+        <h1>Tool</h1>
+        <div class="tool w3-row">
+          <div class="canvas w3-col m8">
+            <canvas id="canvas" width="500" height="500"></canvas>
+          </div>
+          <div class="form w3-col m4">
+            <form>
+              <div>
+                <label for="shape">Form</label>
+                <select id="shape">
+                  <option value="rectangle">Viereckig</option>
+                  <option value="circle">Kreis</option>
+                </select>
+              </div>
+
+              <div>
+                <label for="width">Breite</label>
+                <input id="width" type="number" />
+              </div>
+
+              <div>
+                <label for="height">Tiefe</label>
+                <input id="height" type="number" />
+              </div>
+
+              <div>
+                <label for="color">Farbe</label>
+                <input id="color" type="color" />
+              </div>
+
+              <button>Hinzufügen</button>
+            </form>
+          </div>
+        </div>
+      </section>
+
+      <section id="about">
+        <h1>Über uns</h1>
+        <p>
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
+          numquam, quam dignissimos ut labore, quas impedit dolor libero, autem
+          nemo architecto! Repudiandae praesentium iste neque ullam saepe
+          consectetur possimus eveniet!
+        </p>
+      </section>
+    </main>
+
+    <footer class="w3-bar w3-teal w3-padding">
+      <p class="w3-bar-item">© 2022 - Michael Buholzer</p>
+    </footer>
+  </body>
+</html>
