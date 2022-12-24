@@ -7,8 +7,6 @@
 
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
-
-    <script src="js/script.js"></script>
   </head>
   <body>
     <header class="w3-top">
@@ -39,7 +37,7 @@
         </div>
       </div>
 
-      <section id="home">
+      <section id="home" class="w3-padding-large">
         <h1>Home</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic optio
@@ -49,44 +47,59 @@
         </p>
       </section>
 
-      <section id="tool">
+      <section id="tool" class="w3-padding-large">
         <h1>Tool</h1>
         <div class="tool w3-row">
           <div class="canvas w3-col m8">
             <canvas id="canvas" width="500" height="500"></canvas>
           </div>
           <div class="form w3-col m4">
-            <form>
-              <div>
-                <label for="shape">Form</label>
-                <select id="shape">
-                  <option value="rectangle">Viereckig</option>
+            <form class="w3-container">
+              <div class="w3-margin-bottom">
+                <label for="shape" class="w3-text-teal">Form</label>
+                <select id="shape" class="w3-select" onchange="onShapeChange()">
+                  <option value="rectangle">Viereck</option>
                   <option value="circle">Kreis</option>
                 </select>
               </div>
 
-              <div>
-                <label for="width">Breite</label>
-                <input id="width" type="number" />
+              <div class="w3-margin-bottom">
+                <label for="width" class="w3-text-teal">Breite</label>
+                <input id="width" class="w3-input" type="number" value="40" />
               </div>
 
-              <div>
-                <label for="height">Tiefe</label>
-                <input id="height" type="number" />
+              <div class="w3-margin-bottom" id="height-control">
+                <label for="height" class="w3-text-teal">Tiefe</label>
+                <input id="height" class="w3-input" type="number" value="40" />
               </div>
 
-              <div>
-                <label for="color">Farbe</label>
-                <input id="color" type="color" />
+              <div class="w3-margin-bottom">
+                <label for="color" class="w3-text-teal">Farbe</label>
+                <input
+                  id="color"
+                  class="w3-input"
+                  type="color"
+                  value="#b22222"
+                />
               </div>
 
-              <button>Hinzufügen</button>
+              <span
+                >Klicke an die gewünschte Position im Feld links um das Element
+                hinzuzufügen.</span
+              >
+
+              <div class="w3-margin-top">
+                <button class="w3-button" onclick="clearCanvas()">
+                  Zurücksetzen
+                </button>
+                <button class="w3-button w3-teal">Speichern</button>
+              </div>
             </form>
           </div>
         </div>
       </section>
 
-      <section id="about">
+      <section id="about" class="w3-padding-large">
         <h1>Über uns</h1>
         <p>
           Lorem ipsum dolor sit amet consectetur adipisicing elit. Asperiores
@@ -100,5 +113,7 @@
     <footer class="w3-bar w3-teal w3-padding">
       <p class="w3-bar-item">© 2022 - Michael Buholzer</p>
     </footer>
+
+    <script src="js/script.js"></script>
   </body>
 </html>

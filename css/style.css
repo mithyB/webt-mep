@@ -8,5 +8,9 @@ main .image-title {
 
 .canvas canvas {
   border: 4px solid teal;
-  cursor: grab;
+  cursor: crosshair;
+}
+
+input[type='color'] {
+  padding: 0;
 }
