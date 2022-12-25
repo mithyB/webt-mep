@@ -7,10 +7,13 @@ main .image-title {
 }
 
 .canvas canvas {
-  border: 4px solid teal;
   cursor: crosshair;
 }
 
 input[type='color'] {
   padding: 0;
+}
+
+#about img {
+  float: right;
 }

@@ -57,3 +57,47 @@ function onShapeChange() {
 function clearCanvas() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 }
+
+function drawWalls() {
+  drawLine(2, 2, canvas.width, 2);
+  drawLine(2, 2, 2, canvas.height - 2);
+  drawLine(2, canvas.height - 2, canvas.width / 2, canvas.height - 2);
+  drawLine(canvas.width - 2, 2, canvas.width - 2, canvas.height / 2);
+  drawLine(
+    canvas.width,
+    canvas.height / 2,
+    canvas.width / 2,
+    canvas.height / 2,
+  );
+  drawLine(
+    canvas.width / 2,
+    canvas.height / 2,
+    canvas.width / 2,
+    canvas.height,
+  );
+}
+
+function drawLine(fromX, fromY, toX, toY) {
+  ctx.beginPath();
+  ctx.moveTo(fromX, fromY);
+  ctx.lineTo(toX, toY);
+  ctx.strokeStyle = 'teal';
+  ctx.lineWidth = 4;
+  ctx.stroke();
+}
+
+window.addEventListener('resize', function (e) {
+  setCanvasWidth();
+  drawWalls();
+});
+
+function setCanvasWidth() {
+  const newWidth = Math.min(document.body.clientWidth - 55, 500);
+
+  if (newWidth !== canvas.width) {
+    canvas.width = newWidth;
+  }
+}
+
+setCanvasWidth();
+drawWalls();
