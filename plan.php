@@ -13,7 +13,7 @@
 
 
     function printSavedPlans($connection){
-        $select_plans = $connection->prepare("SELECT * FROM plan");
+        $select_plans = $connection->prepare("SELECT * FROM plan WHERE id > 1"); // filter out the test plan
         $select_plans->execute();
         $result = $select_plans->get_result();
         while ($row = $result->fetch_assoc()) {
