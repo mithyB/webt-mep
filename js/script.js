@@ -1,5 +1,6 @@
 const canvas = document.getElementById('canvas');
 const ctx = canvas.getContext('2d');
+let data = [];
 
 canvas.addEventListener('mousedown', function (e) {
   const position = getPosition(canvas, e);
@@ -24,9 +25,15 @@ function addShape(x, y) {
 
   if (shape === 'rectangle') {
     drawRectangle(color, x, y, width, height);
+
+    data.push({ shape, color, x, y, width, height });
   } else {
     drawCircle(color, x, y, width);
+
+    data.push({ shape, color, x, y, width });
   }
+
+  updateData();
 }
 
 function drawRectangle(color, x, y, width, height) {
@@ -76,6 +83,9 @@ function drawWalls() {
     canvas.width / 2,
     canvas.height,
   );
+
+  data = [];
+  updateData();
 }
 
 function drawLine(fromX, fromY, toX, toY) {
@@ -98,6 +108,10 @@ function setCanvasWidth() {
   if (newWidth !== canvas.width) {
     canvas.width = newWidth;
   }
+}
+
+function updateData() {
+  document.getElementById('data').value = JSON.stringify(data);
 }
 
 setCanvasWidth();

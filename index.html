@@ -55,7 +55,7 @@
             <canvas id="canvas" width="500" height="500"></canvas>
           </div>
           <div class="form w3-col l4">
-            <form class="w3-container">
+            <form class="w3-container" action="plan.php" method="post">
               <div class="w3-margin-bottom">
                 <label for="shape" class="w3-text-teal">Form</label>
                 <select id="shape" class="w3-select" onchange="onShapeChange()">
@@ -96,16 +96,20 @@
                 />
               </div>
 
+              <input hidden id="data" name="data" />
+
               <span
                 >Klicke an die gewünschte Position im Feld links um das Element
                 hinzuzufügen.</span
               >
 
               <div class="w3-margin-top">
-                <button class="w3-button" onclick="clearCanvas()">
+                <button class="w3-button" onclick="clearCanvas()" type="button">
                   Zurücksetzen
                 </button>
-                <button class="w3-button w3-teal">Speichern</button>
+                <button class="w3-button w3-teal" type="submit">
+                  Speichern
+                </button>
               </div>
             </form>
           </div>
