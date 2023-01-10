@@ -5,9 +5,9 @@
         $insert_plan->bind_param("s", $furniture_json);
         $insert_plan->execute();
         if($insert_plan->affected_rows == 1){
-            return "Plan wurde erfolgreich gespeichert!";
+            return "<h1>Plan wurde erfolgreich gespeichert!</h1>";
         } else {
-            return "Plan konnte nicht gespeichert werden!";
+            return "<h1>Plan konnte nicht gespeichert werden!</h1>";
         }
     }
 
@@ -63,6 +63,8 @@
         $DBConnection,
         $_POST['data']
     );
+
+    echo "<a href='/'>Zurück zum Wohnungsplaner</a>";
 
     printSavedPlans($DBConnection);
 
