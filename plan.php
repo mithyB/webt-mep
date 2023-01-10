@@ -16,26 +16,34 @@
         $select_plans = $connection->prepare("SELECT * FROM plan WHERE id > 1"); // filter out the test plan
         $select_plans->execute();
         $result = $select_plans->get_result();
+        
+        incrementCookie() ;
+        printCookie();
+
         while ($row = $result->fetch_assoc()) {
             echo "<h1> ID: ".$row['id']."</h1>";
-            echo "<h5> Möbel: ".$row['furniture']."</h5>";
+            echo "<p> Möbel: ".$row['furniture']."</p>";
             echo "<p> Erstellt am: ".$row['created_at']."</p>";
-
         }
     }
-
-    function printCookie(){
-        if(isset($_COOKIE[COOKIENAME])){
-            echo $_COOKIE[COOKIENAME];
-        }
-    }
+    
+    define('COOKIENAME', 'created_plans_count');
 
     function incrementCookie(){
         $count = 0;
-        if(isset($_COOKIE[COOKIENAME])){
+
+        if (isset($_COOKIE[COOKIENAME])){
             $count = intval($_COOKIE[COOKIENAME]);
         }
+
         setcookie(COOKIENAME, $count+1, time() + 3600*24, "/");
+        $_COOKIE[COOKIENAME] = $count+1;
+    }
+
+    function printCookie(){
+        if (isset($_COOKIE[COOKIENAME])){
+            echo "<p>Anzahl Aufrufe: ".$_COOKIE[COOKIENAME]."</p>";
+        }
     }
 
     function connectDB(){
@@ -49,8 +57,6 @@
     function closeDB($connection){
         $connection->close();
     }
-    
-    define('COOKIENAME', 'created_plans_count');
     $DBConnection = connectDB();
 
     echo createPlan(
